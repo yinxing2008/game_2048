@@ -289,7 +289,6 @@ class GamePanelState extends State<GamePanel> {
     return newArr;
   }
 
-  /// 游戏方格和数字方格的绘制
   @override
   Widget build(BuildContext context) {
     if (_isGameOver) {
