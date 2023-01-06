@@ -169,14 +169,14 @@ class GamePanelState extends State<GamePanel> {
 
   void _moveDown() {
     setState(() {
-      verticalMoveCells(false);
+      _verticalMoveCells(false);
     });
     _checkGameOverOrContinue();
   }
 
   void _moveUp() {
     setState(() {
-      verticalMoveCells(true);
+      _verticalMoveCells(true);
     });
     _checkGameOverOrContinue();
   }
@@ -235,7 +235,7 @@ class GamePanelState extends State<GamePanel> {
 
   /// 将单元格数向下或向上移动，移除undefined并对相邻相同数进行叠加
   /// toUp表示是否是向上
-  verticalMoveCells(bool toUp) {
+  _verticalMoveCells(bool toUp) {
     for (var i = 0; i < 4; i++) {
       var newArr = List<int>.generate(4, (_) => 0);
       for (var j = 0; j < 4; j++) {

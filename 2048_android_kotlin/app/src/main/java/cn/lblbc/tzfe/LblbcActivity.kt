@@ -161,6 +161,7 @@ class LblbcActivity : AppCompatActivity(), View.OnTouchListener, GestureDetector
                 cellArr[i][j] = resultArr[j]
             }
         }
+        checkGameOverOrContinue()
     }
 
     /**
@@ -178,6 +179,7 @@ class LblbcActivity : AppCompatActivity(), View.OnTouchListener, GestureDetector
                 cellArr[j][i] = resultArr[j]
             }
         }
+        checkGameOverOrContinue()
     }
 
     /**
@@ -238,23 +240,46 @@ class LblbcActivity : AppCompatActivity(), View.OnTouchListener, GestureDetector
     }
 
     override fun onFling(e1: MotionEvent, e2: MotionEvent, velocityX: Float, velocityY: Float): Boolean {
-        if (e1.x - e2.x > 100) {
-            horizontalMoveCells(true)
-        } else if (e2.x - e1.x > 100) {
-            horizontalMoveCells(false)
-        } else if (e1.y - e2.y > 100) {
-            verticalMoveCells(true)
+        if (e1.y - e2.y > 100) {
+            moveUp()
         } else if (e2.y - e1.y > 100) {
-            verticalMoveCells(false)
+            moveDown()
+        } else if (e1.x - e2.x > 100) {
+            moveLeft()
+        } else if (e2.x - e1.x > 100) {
+            moveRight()
         }
+
+        return true
+    }
+
+    private fun moveUp() {
+        verticalMoveCells(true)
+        checkGameOverOrContinue()
+    }
+
+    private fun moveDown() {
+        verticalMoveCells(false)
+        checkGameOverOrContinue()
+    }
+
+    private fun moveLeft() {
+        horizontalMoveCells(true)
+        checkGameOverOrContinue()
+    }
+
+    private fun moveRight() {
+        horizontalMoveCells(false)
+        checkGameOverOrContinue()
+    }
+
+    private fun checkGameOverOrContinue() {
         if (canMove()) {
             fillOneEmptyCell()
             showCells()
         } else {
             Toast.makeText(this, "游戏结束", Toast.LENGTH_SHORT).show()
         }
-
-        return true
     }
 
     override fun onTouch(v: View, event: MotionEvent): Boolean {
