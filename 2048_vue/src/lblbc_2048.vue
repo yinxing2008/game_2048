@@ -28,7 +28,7 @@ export default {
   data() {
     return {
       cellArr: [],
-      isGameOver: false,
+      isGameOver: false
     }
   },
   mounted() {
@@ -55,7 +55,7 @@ export default {
     },
     //生成随机数，0=<结果<max
     random(max) {
-        return Math.floor(Math.random()* max) 
+      return Math.floor(Math.random() * max)
     },
     //找到可以用于生成新数字的单元格
     findOneEmptyCell() {
@@ -138,7 +138,7 @@ export default {
         }
       }
     },
-     /**
+    /**
      * 1、去掉数组中的undefined，向头或向尾压缩数组。
      * undefined,4,undefined,4向左压缩变成：4,4,undefined,undefined. 向右压缩变成：undefined,undefined,4,4
      * 2、相邻的数如果相同，则进行相加运算。
@@ -184,18 +184,36 @@ export default {
       let arr = null
       switch (e.keyCode) {
         case 38: //上
-          this.verticalMoveCells(true)
+          this.moveUp()
           break
         case 40: //下
-          this.verticalMoveCells(false)
+          this.moveDown()
           break
         case 37: //左
-          this.horizontalMoveCells(true)
+          this.moveLeft()
           break
         case 39: //右
-          this.horizontalMoveCells(false)
+          this.moveRight()
           break
       }
+    },
+    moveUp() {
+      this.verticalMoveCells(true)
+      this.checkGameOverOrContinue()
+    },
+    moveDown() {
+      this.verticalMoveCells(false)
+      this.checkGameOverOrContinue()
+    },
+    moveLeft() {
+      this.horizontalMoveCells(true)
+      this.checkGameOverOrContinue()
+    },
+    moveRight() {
+      this.horizontalMoveCells(false)
+      this.checkGameOverOrContinue()
+    },
+    checkGameOverOrContinue() {
       if (this.canMove()) {
         this.fillOneEmptyCell()
       } else {
@@ -269,43 +287,43 @@ export default {
         border-radius: 3px;
         background: #cec1b3;
         &.cell-2 {
-          background: #EEE4DA;
+          background: #eee4da;
         }
         &.cell-4 {
-          background: #EDE0C8;
+          background: #ede0c8;
         }
         &.cell-8 {
-          background: #F26179;
+          background: #f26179;
         }
         &.cell-16 {
-          background: #F59563;
+          background: #f59563;
         }
         &.cell-32 {
-          background: #F67C5F;
+          background: #f67c5f;
         }
         &.cell-64 {
-          background: #F65E36;
+          background: #f65e36;
         }
         &.cell-128 {
-          background: #EDCF72;
+          background: #edcf72;
         }
         &.cell-256 {
-          background: #EDCC61;
+          background: #edcc61;
         }
         &.cell-512 {
-          background: #90C000;
+          background: #90c000;
         }
         &.cell-1024 {
-          background: #3365A5;
+          background: #3365a5;
         }
         &.cell-2048 {
-          background: #90C000;
+          background: #90c000;
         }
         &.cell-4096 {
-          background: #60B0C0;
+          background: #60b0c0;
         }
         &.cell-8192 {
-          background: #9030C0;
+          background: #9030c0;
         }
       }
     }
