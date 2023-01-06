@@ -49,19 +49,44 @@ struct ContentView: View {
             return
         }
         
-        if abs(x) / abs(y) >= 1 {
-            if x > 0 {
-                horizontalMoveCells(toLeft: false)
+        if abs(x) / abs(y) < 1 {
+            if y < 0 {
+                moveUp()
             } else {
-                horizontalMoveCells(toLeft: true)
+                moveDown()
             }
+           
         } else {
-            if y > 0 {
-                verticalMoveCells(toTop: false)
+            if x < 0 {
+                moveLeft()
             } else {
-                verticalMoveCells(toTop: true)
+                moveRight()
             }
         }
+        
+    }
+    
+    func moveUp(){
+        verticalMoveCells(toTop: true)
+        checkGameOverOrContinue()
+    }
+    
+    func moveDown(){
+        verticalMoveCells(toTop: false)
+        checkGameOverOrContinue()
+    }
+    
+    func moveLeft(){
+        horizontalMoveCells(toLeft: true)
+        checkGameOverOrContinue()
+    }
+    
+    func moveRight(){
+        horizontalMoveCells(toLeft: false)
+        checkGameOverOrContinue()
+    }
+    
+    func checkGameOverOrContinue(){
         if(canMove()){
             fillOneEmptyCell()
         }else{
