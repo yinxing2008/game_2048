@@ -161,7 +161,6 @@ class LblbcActivity : AppCompatActivity(), View.OnTouchListener, GestureDetector
                 cellArr[i][j] = resultArr[j]
             }
         }
-        checkGameOverOrContinue()
     }
 
     /**
@@ -179,7 +178,6 @@ class LblbcActivity : AppCompatActivity(), View.OnTouchListener, GestureDetector
                 cellArr[j][i] = resultArr[j]
             }
         }
-        checkGameOverOrContinue()
     }
 
     /**
