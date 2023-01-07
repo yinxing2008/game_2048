@@ -28,19 +28,7 @@ func convertPrintStr(x, y int, str string, fg, bg termbox.Attribute) error {
 	return nil
 }
 
-// 游戏状态
-type Status uint
-
-const (
-	Win Status = iota
-	Fail
-	Add
-	Max = 2048
-)
-
 // 2048游戏中的16个格子使用4x4二维数组表示
-// type G2048 [4][4]int
-
 var cellArr = [4][4]int{
 	{0, 0, 0, 0},
 	{0, 0, 0, 0},
