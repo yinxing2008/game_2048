@@ -28,7 +28,9 @@ func convertPrintStr(x, y int, str string, fg, bg termbox.Attribute) error {
 	return nil
 }
 
-// 2048游戏中的16个格子使用4x4二维数组表示
+/*
+   2048游戏中的16个格子使用4x4二维数组表示
+*/
 var cellArr = [4][4]int{
 	{0, 0, 0, 0},
 	{0, 0, 0, 0},
