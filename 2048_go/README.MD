@@ -15,7 +15,7 @@ Visual Studio Code
 Go语言
 # 工程截图
 ![](https://img-blog.csdnimg.cn/a4d97de6cb0a45fdbbaf1a980be6b15e.png)
-# 开始上手
+# 快速上手
 ## 1.下载依赖
 ```go
 go mod tidy
