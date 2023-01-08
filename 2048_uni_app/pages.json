@@ -1,0 +1,17 @@
+{
+	"pages": [
+		{
+			"path": "pages/lblbc_2048",
+			"style": {
+				"navigationBarTitleText": "2048"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "蓝不蓝编程",
+		"navigationBarBackgroundColor": "#418DF9",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {}
+}
