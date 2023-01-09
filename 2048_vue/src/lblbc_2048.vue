@@ -38,7 +38,7 @@ export default {
   methods: {
     startGame() {
       this.isGameOver = false
-      this.cellArr = Array.from(Array(4)).map(() => Array(4).fill(undefined))
+      this.cellArr = Array.from(Array(4)).map(() => Array(4).fill(0))
       this.fillOneEmptyCell()
       this.fillOneEmptyCell()
     },
@@ -112,7 +112,7 @@ export default {
      */
     horizontalMoveCells(toLeft: boolean) {
       for (let i = 0; i < 4; i++) {
-        let newArr = Array(4).fill(undefined)
+        let newArr = Array(4).fill(0)
         for (let j = 0; j < 4; j++) {
           newArr[j] = this.cellArr[i][j]
         }
@@ -128,7 +128,7 @@ export default {
      */
     verticalMoveCells(toUp: boolean) {
       for (let i = 0; i < 4; i++) {
-        let newArr = Array(4).fill(undefined)
+        let newArr = Array(4).fill(0)
         for (let j = 0; j < 4; j++) {
           newArr[j] = this.cellArr[j][i]
         }
@@ -140,14 +140,14 @@ export default {
     },
     /**
      * 1、去掉数组中的undefined，向头或向尾压缩数组。
-     * undefined,4,undefined,4向左压缩变成：4,4,undefined,undefined. 向右压缩变成：undefined,undefined,4,4
+     * 0,4,0,4向左压缩变成：4,4,0,0. 向右压缩变成：undefined,0,4,4
      * 2、相邻的数如果相同，则进行相加运算。
-     * 4,4,undefined,undefined向左叠加变成：8,undefined,undefined,undefined. 向右叠加变成：undefined,undefined,undefined,8
+     * 4,4,0,undefined向左叠加变成：8,0,0,0. 向右叠加变成：undefined,0,0,8
      * toHead表示是否是头压缩
      */
     removeZerosAndAdd(arr: [], toHead: boolean) {
-      let newArr = Array(4).fill(undefined)
-      let arrWithoutZero = arr.filter((x) => x !== undefined) //去掉所有的undefined
+      let newArr = Array(4).fill(0)
+      let arrWithoutZero = arr.filter((x) => x !== 0) //去掉所有的undefined
       if (arrWithoutZero.length == 0) {
         return newArr
       }
@@ -157,8 +157,8 @@ export default {
         }
         //对相邻相同的数进行叠加
         for (let i = 0; i < newArr.length - 1; i++) {
-          if (newArr[3 - i] === newArr[2 - i] && newArr[3 - i] !== undefined) {
-            newArr[3 - i] = undefined
+          if (newArr[3 - i] === newArr[2 - i] && newArr[3 - i] !== 0) {
+            newArr[3 - i] = 0
             newArr[2 - i] *= 2
           }
         }
@@ -170,8 +170,8 @@ export default {
 
         //对相邻相同的数进行叠加
         for (let i = 0; i < newArr.length - 1; i++) {
-          if (newArr[i] === newArr[i + 1] && newArr[i] !== undefined) {
-            newArr[i] = undefined
+          if (newArr[i] === newArr[i + 1] && newArr[i] !== 0) {
+            newArr[i] = 0
             newArr[i + 1] *= 2
           }
         }
@@ -286,6 +286,9 @@ export default {
         font-size: 24px;
         border-radius: 3px;
         background: #cec1b3;
+        &.cell-0 {
+          color: #00000000;
+        }
         &.cell-2 {
           background: #eee4da;
         }
