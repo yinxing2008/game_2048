@@ -107,7 +107,7 @@ export default {
       return false
     },
     /**
-     * 将单元格数向左或向右移动，移除undefined并对相邻相同数进行叠加
+     * 将单元格数向左或向右移动，移除0并对相邻相同数进行叠加
      * toLeft表示是否是向左
      */
     horizontalMoveCells(toLeft: boolean) {
@@ -123,7 +123,7 @@ export default {
       }
     },
     /**
-     * 将单元格数向下或向上移动，移除undefined并对相邻相同数进行叠加
+     * 将单元格数向下或向上移动，移除0并对相邻相同数进行叠加
      * toUp表示是否是向上
      */
     verticalMoveCells(toUp: boolean) {
@@ -139,15 +139,15 @@ export default {
       }
     },
     /**
-     * 1、去掉数组中的undefined，向头或向尾压缩数组。
-     * 0,4,0,4向左压缩变成：4,4,0,0. 向右压缩变成：undefined,0,4,4
+     * 1、去掉数组中的0，向头或向尾压缩数组。
+     * 0,4,0,4向左压缩变成：4,4,0,0. 向右压缩变成：0,0,4,4
      * 2、相邻的数如果相同，则进行相加运算。
-     * 4,4,0,undefined向左叠加变成：8,0,0,0. 向右叠加变成：undefined,0,0,8
+     * 4,4,0,0向左叠加变成：8,0,0,0. 向右叠加变成：0,0,0,8
      * toHead表示是否是头压缩
      */
     removeZerosAndAdd(arr: [], toHead: boolean) {
       let newArr = Array(4).fill(0)
-      let arrWithoutZero = arr.filter((x) => x !== 0) //去掉所有的undefined
+      let arrWithoutZero = arr.filter((x) => x !== 0) //去掉所有的0
       if (arrWithoutZero.length == 0) {
         return newArr
       }
