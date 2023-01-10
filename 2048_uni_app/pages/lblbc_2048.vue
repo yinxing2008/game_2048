@@ -145,7 +145,7 @@ export default {
      * 4,4,0,0向左叠加变成：8,0,0,0. 向右叠加变成：0,0,0,8
      * toHead表示是否是头压缩
      */
-    removeZerosAndAdd(arr: [], toHead: boolean) {
+    removeZerosAndAdd(arr: number[], toHead: boolean) {
       let newArr = Array(4).fill(0)
       let arrWithoutZero = arr.filter((x) => x !== 0) //去掉所有的0
       if (arrWithoutZero.length == 0) {
