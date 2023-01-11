@@ -109,25 +109,25 @@ public class LblbcActivity extends AppCompatActivity implements View.OnTouchList
     }
 
     private void showCells() {
-        updateTextView(R.id.textView0, cellArr[0][0]);
-        updateTextView(R.id.textView1, cellArr[0][1]);
-        updateTextView(R.id.textView2, cellArr[0][2]);
-        updateTextView(R.id.textView3, cellArr[0][3]);
-        updateTextView(R.id.textView4, cellArr[1][0]);
-        updateTextView(R.id.textView5, cellArr[1][1]);
-        updateTextView(R.id.textView6, cellArr[1][2]);
-        updateTextView(R.id.textView7, cellArr[1][3]);
-        updateTextView(R.id.textView8, cellArr[2][0]);
-        updateTextView(R.id.textView9, cellArr[2][1]);
-        updateTextView(R.id.textView10, cellArr[2][2]);
-        updateTextView(R.id.textView11, cellArr[2][3]);
-        updateTextView(R.id.textView12, cellArr[3][0]);
-        updateTextView(R.id.textView13, cellArr[3][1]);
-        updateTextView(R.id.textView14, cellArr[3][2]);
-        updateTextView(R.id.textView15, cellArr[3][3]);
+        showCell(R.id.textView0, cellArr[0][0]);
+        showCell(R.id.textView1, cellArr[0][1]);
+        showCell(R.id.textView2, cellArr[0][2]);
+        showCell(R.id.textView3, cellArr[0][3]);
+        showCell(R.id.textView4, cellArr[1][0]);
+        showCell(R.id.textView5, cellArr[1][1]);
+        showCell(R.id.textView6, cellArr[1][2]);
+        showCell(R.id.textView7, cellArr[1][3]);
+        showCell(R.id.textView8, cellArr[2][0]);
+        showCell(R.id.textView9, cellArr[2][1]);
+        showCell(R.id.textView10, cellArr[2][2]);
+        showCell(R.id.textView11, cellArr[2][3]);
+        showCell(R.id.textView12, cellArr[3][0]);
+        showCell(R.id.textView13, cellArr[3][1]);
+        showCell(R.id.textView14, cellArr[3][2]);
+        showCell(R.id.textView15, cellArr[3][3]);
     }
 
-    private void updateTextView(int textViewResId, int cellValue) {
+    private void showCell(int textViewResId, int cellValue) {
         TextView textView = this.findViewById(textViewResId);
         if (cellValue == 0) {
             textView.setText("");
