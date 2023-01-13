@@ -35,13 +35,6 @@ Page({
   },
   //找到可以用于生成新数字的单元格
   findOneEmptyCell() {
-    let cells = this.availableCells()
-    if (cells.length) {
-      return cells[this.random(cells.length)]
-    }
-  },
-  //找出所有空单元格,，值为单元格在16个格子中的序号
-  availableCells() {
     let cells = []
     for (let i = 0; i < 4; i++) {
       for (let j = 0; j < 4; j++) {
@@ -50,11 +43,9 @@ Page({
         }
       }
     }
-    return cells
-  },
-  //是否存在空格子
-  hasAvailableCells() {
-    return !!this.availableCells().length
+    if (cells.length) {
+      return cells[this.random(cells.length)]
+    }
   },
   /*
    判断是否还可以移动。
