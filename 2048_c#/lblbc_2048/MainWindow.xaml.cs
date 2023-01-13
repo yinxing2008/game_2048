@@ -66,9 +66,7 @@ namespace lblbc_2048
             return position;
         }
 
-        /**
-     * 生成新的数字，90%几率生成2，10%几率生成4
-     */
+      //生成新的数字，90%几率生成2，10%几率生成4
         private int GetRandomValue()
         {
             int rand = RandomVal(10);
@@ -85,12 +83,11 @@ namespace lblbc_2048
             Random random = new Random();
             return random.Next(max);
         }
-        /**
-   * 判断是否还可以移动。
-   * 1、当前单元格是否为0；
-   * 2、当前单元格和右侧单元格是否相等；
-   * 3、当前单元格和下方单元格是否相等。
-   */
+
+        //判断是否还可以移动。
+        //1、当前单元格是否为0；
+        //2、当前单元格和右侧单元格是否相等；
+        //3、当前单元格和下方单元格是否相等。
         private bool CanMove()
         {
             for (int i = 0; i < 4; i++)
