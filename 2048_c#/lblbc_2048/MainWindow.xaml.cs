@@ -1,18 +1,14 @@
-﻿using System;
+﻿/*
+  厦门大学计算机专业 | 前华为工程师
+  专注《零基础学编程系列》  http://lblbc.cn/blog
+  包含：Java | 安卓 | 前端 | Flutter | iOS | 小程序 | 鸿蒙
+  公众号：蓝不蓝编程
+ */
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace lblbc_2048
 {
