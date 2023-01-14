@@ -45,9 +45,11 @@ export default {
     //找到可以用于生成新数字的单元格，并生成新的数字进行填充
     fillOneEmptyCell() {
       let cellIndex = this.findOneEmptyCell()
-      let row = Math.floor(cellIndex / 4)
-      let col = cellIndex % 4
-      this.cellArr[row][col] = this.getRandomValue()
+      if (cellIndex != -1) {
+        let row = Math.floor(cellIndex / 4)
+        let col = cellIndex % 4
+        this.cellArr[row][col] = this.getRandomValue()
+      }
     },
     //生成新的数字，90%几率生成2，10%几率生成4
     getRandomValue() {
@@ -70,6 +72,8 @@ export default {
 
       if (cells.length) {
         return cells[this.random(cells.length)]
+      } else {
+        return -1
       }
     },
     /*
