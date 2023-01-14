@@ -17,13 +17,15 @@ Page({
   //找到可以用于生成新数字的单元格，并生成新的数字进行填充
   fillOneEmptyCell() {
     let cellIndex = this.findOneEmptyCell()
-    let row = Math.floor(cellIndex / 4)
-    let col = cellIndex % 4
-    let cellArr = this.data.cellArr
-    cellArr[row][col] = this.getRandomValue()
-    this.setData({
-      cellArr: cellArr
-    })
+    if (cellIndex != -1) {
+      let row = Math.floor(cellIndex / 4)
+      let col = cellIndex % 4
+      let cellArr = this.data.cellArr
+      cellArr[row][col] = this.getRandomValue()
+      this.setData({
+        cellArr: cellArr
+      })
+    }
   },
   //生成新的数字，90%几率生成2，10%几率生成4
   getRandomValue() {
@@ -45,6 +47,8 @@ Page({
     }
     if (cells.length) {
       return cells[this.random(cells.length)]
+    } else {
+      return -1
     }
   },
   /*
