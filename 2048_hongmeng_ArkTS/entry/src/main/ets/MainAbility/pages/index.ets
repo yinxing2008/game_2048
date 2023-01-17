@@ -11,7 +11,7 @@ import { ColorUtil } from '../util/ColorUtil'
 
 @Entry
 @Component
-struct Game2048 {
+struct Lblbc {
   @State flatCellArr: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
   private gameController: GameController = new GameController()
   private colorUtil: ColorUtil = new ColorUtil()
