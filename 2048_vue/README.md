@@ -1,6 +1,6 @@
 # Introduction
 For programming beginer, implemented in Android, SwiftUI, Flutter, Vue, uni-app, ArkTS(Huawei Harmony OS)
-![](https://img-blog.csdnimg.cn/d56d9e29d17c421aa266fe8a4421f52f.png)
+![](https://img-blog.csdnimg.cn/3c9e28b6d08147f8a0a57b29c9bfa8c4.png)
 # 2048 rules
 1. Swipe left, right, up or down.
 2. The same number in neighbourhood will be added.
@@ -14,7 +14,7 @@ Vue3 + Vite + Vant + Axios
 
 # Open source
 [https://gitee.com/lblbc/game_2048](https://gitee.com/lblbc/game_2048)
-![](https://img-blog.csdnimg.cn/053ec343edbf4d1d9348401de5c8d5c1.png)
+![](https://img-blog.csdnimg.cn/2ba9365f5b1d4e2ca2a5aa34c1986e36.png)
 
 # About Me
 Graduated from China Xiamen University  
